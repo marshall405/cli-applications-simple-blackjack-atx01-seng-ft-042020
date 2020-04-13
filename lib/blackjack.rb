@@ -40,10 +40,13 @@ def hit?(current_total)
   prompt_user
   input = get_user_input
   
-  while input != 'h' || input != 's' do 
+  while input != 'h' && input != 's' do 
     invalid_command
     prompt_user
     input = get_user_input
+  end
+  while input == 's' do
+    hit?(current_total)
   end
   if input == 'h' 
     current_total += deal_card
@@ -63,17 +66,12 @@ end
 def runner
   # code runner here
   welcome
-  total = initial_round
-  hit?(total)
-  
-  while input == 's' do
-    prompt_user
-    input = get_user_input
+  current_total = initial_round
+  new_total = hit?(current_total)
+  display_card_total(new_total)
+  until new_total > 21 do
+    new_total = hit?(new_total)
   end
-  
-  
-
-  
   
 end
     
