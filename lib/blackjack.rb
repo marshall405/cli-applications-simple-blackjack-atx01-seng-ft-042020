@@ -40,7 +40,7 @@ def hit?(current_total)
   prompt_user
   input = get_user_input
   
-  if input != 'h' && input != 's'
+  while input != 'h' || input != 's' do 
     invalid_command
     prompt_user
     input = get_user_input
@@ -64,8 +64,15 @@ def runner
   # code runner here
   welcome
   total = initial_round
-  prompt_user
-  input = get_user_input
+  hit?(total)
+  
+  while input == 's' do
+    prompt_user
+    input = get_user_input
+  end
+  
+  
+
   
   
 end
