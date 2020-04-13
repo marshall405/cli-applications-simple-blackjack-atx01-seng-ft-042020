@@ -1,6 +1,6 @@
-def welcome
+def welcome(message)
   # code #welcome here
-  puts "Welcome to the Black jack Table"
+  puts message 
 end
 
 def deal_card
