@@ -5,7 +5,7 @@ end
 
 def deal_card
   # code #deal_card here
-  rand(12)
+  rand(11) + 1
 end
 
 def display_card_total
