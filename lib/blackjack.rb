@@ -44,6 +44,7 @@ def hit?(current_total)
   end
   if input != 'h' || input != 's'
     invalid_command
+    prompt_user
   end
   current_total
 end
@@ -51,7 +52,6 @@ end
 def invalid_command
   # code invalid_command here
   puts "Please enter a valid command"
-  prompt_user
 end
 
 #####################################################
